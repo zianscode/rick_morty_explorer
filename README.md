@@ -41,7 +41,7 @@ A modern, responsive web application for exploring characters from the Rick and 
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/yourusername/rick_morty_explorer.git
+   git clone https://github.com/zianscode/rick_morty_explorer.git
    cd rick_morty_explorer
 
 2. Install dependencies:
