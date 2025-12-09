@@ -1,9 +1,9 @@
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import './globals.css'
+import { Header } from '@/components/Header'
+import { Footer } from '@/components/Footer'
 import { ThemeToggle } from '@/components/ThemeToggle'
-import Link from 'next/link'
-import { Home, Tv } from 'lucide-react'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -20,126 +20,22 @@ export default function RootLayout({
   return (
     <html lang="en" className="scroll-smooth">
       <body className={inter.className}>
-        <header style={{
-          position: 'sticky',
-          top: 0,
-          zIndex: 40,
-          backgroundColor: 'var(--color-header-bg)',
-          backdropFilter: 'blur(12px)',
-          borderBottom: '1px solid var(--color-card-border)',
-        }}>
-          <div style={{ 
-            maxWidth: '1280px', 
-            margin: '0 auto', 
-            padding: '1rem 1rem' 
-          }}>
-            <div style={{ 
-              display: 'flex', 
-              alignItems: 'center', 
-              justifyContent: 'space-between' 
-            }}>
-              <Link href="/" style={{ 
-                display: 'flex', 
-                alignItems: 'center', 
-                gap: '12px',
-                textDecoration: 'none',
-                color: 'inherit',
-              }}>
-                <div style={{
-                  padding: '8px',
-                  borderRadius: '12px',
-                  background: 'linear-gradient(135deg, #97ce4c, #00b5cc)',
-                }}>
-                  <Tv style={{ width: '24px', height: '24px', color: '#ffffff' }} />
-                </div>
-                <div>
-                  <h1 style={{
-                    fontSize: '1.5rem',
-                    fontWeight: 'bold',
-                    background: 'linear-gradient(90deg, #97ce4c, #00b5cc)',
-                    backgroundClip: 'text',
-                    WebkitBackgroundClip: 'text',
-                    color: 'transparent',
-                    margin: 0,
-                  }}>
-                    Rick & Morty Explorer
-                  </h1>
-                  <p style={{
-                    fontSize: '0.875rem',
-                    color: '#6b7280',
-                    margin: 0,
-                  }}>
-                    Multiverse Character Database
-                  </p>
-                </div>
-              </Link>
-              
-              <nav style={{ display: 'flex', alignItems: 'center', gap: '24px' }}>
-                <Link 
-                  href="/" 
-                  style={{
-                    display: 'flex',
-                    alignItems: 'center',
-                    gap: '8px',
-                    color: 'var(--color-text)',
-                    textDecoration: 'none',
-                    fontSize: '0.875rem',
-                    fontWeight: 500,
-                  }}
-                >
-                  <Home style={{ width: '16px', height: '16px' }} />
-                  Home
-                </Link>
-                <Link 
-                  href="/episodes" 
-                  style={{
-                    display: 'flex',
-                    alignItems: 'center',
-                    gap: '8px',
-                    color: 'var(--color-text)',
-                    textDecoration: 'none',
-                    fontSize: '0.875rem',
-                    fontWeight: 500,
-                  }}
-                >
-                  <Tv style={{ width: '16px', height: '16px' }} />
-                  Episodes
-                </Link>
-              </nav>
-            </div>
-          </div>
-        </header>
+        <Header />
+        
+        <div style={{ height: '150px' }} /> 
 
-        <main style={{ 
-          maxWidth: '1280px', 
-          margin: '0 auto', 
-          padding: '2rem 1rem',
-          minHeight: '100vh',
-        }}>
+        <main
+          style={{
+            maxWidth: '1280px',
+            margin: '0 auto',
+            padding: '0 1rem 2rem',
+            minHeight: 'calc(100vh - 220px)', 
+          }}
+        >
           {children}
         </main>
 
-        <footer style={{
-          borderTop: '1px solid var(--color-card-border)',
-          marginTop: '3rem',
-        }}>
-          <div style={{ 
-            maxWidth: '1280px', 
-            margin: '0 auto', 
-            padding: '2rem 1rem' 
-          }}>
-            <div style={{ 
-              textAlign: 'center', 
-              color: '#6b7280',
-              fontSize: '0.875rem',
-            }}>
-              <p>Data provided by the Rick and Morty API</p>
-              <p style={{ marginTop: '0.5rem' }}>
-                © {new Date().getFullYear()} Rick & Morty Explorer. Not affiliated with Adult Swim.
-              </p>
-            </div>
-          </div>
-        </footer>
+        <Footer />
 
         <ThemeToggle />
       </body>

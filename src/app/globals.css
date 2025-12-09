@@ -64,7 +64,24 @@ body {
   min-height: 100vh;
 }
 
-/* Animations */
+
+/* Tambahkan animasi slideUp untuk theme menu */
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Smooth transitions untuk theme toggle */
+button, a {
+  transition: all 0.2s ease;
+}
+
 @keyframes spin {
   from {
     transform: rotate(0deg);
