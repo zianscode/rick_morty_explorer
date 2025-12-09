@@ -359,3 +359,8 @@ export default function CharacterDetailPage() {
     </div>
   )
 }
+
+// Needed for static export with dynamic routes
+export async function generateStaticParams() {
+  return []
+}
