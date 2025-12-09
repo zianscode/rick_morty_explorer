@@ -1,7 +1,6 @@
 import type { NextConfig } from 'next'
 
 const nextConfig: NextConfig = {
-  output: 'export',
   images: {
     unoptimized: true,
     remotePatterns: [
@@ -12,8 +11,6 @@ const nextConfig: NextConfig = {
       },
     ],
   },
-  trailingSlash: true,
-  skipTrailingSlashRedirect: true,
 }
 
 export default nextConfig
