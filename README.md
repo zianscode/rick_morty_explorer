@@ -1,6 +1,6 @@
 # 🚀 Rick & Morty Character Explorer
 
-A modern, responsive web application for exploring characters from the Rick and Morty universe. Built with Next.js 14, TypeScript, and Tailwind CSS.
+A modern, responsive web application for exploring characters from the Rick and Morty universe. Built with Next.js Latest, TypeScript, and Tailwind CSS.
 
 ## ✨ Features
 
