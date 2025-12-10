@@ -87,7 +87,7 @@ export const Pagination: React.FC = () => {
       </button>
 
       <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
-        {start > 1 && (
+        {!isMobile && start > 1 && (
           <>
             <button
               onClick={() => setPage(1)}
