@@ -1,17 +1,29 @@
 "use client";
 
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { useCharacters } from "@/hooks/useCharacters";
 
 export const Pagination: React.FC = () => {
   const { pagination, setPage } = useCharacters();
   const { currentPage, totalPages } = pagination;
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+
+    checkMobile();
+    window.addEventListener("resize", checkMobile);
+
+    return () => window.removeEventListener("resize", checkMobile);
+  }, []);
 
   if (totalPages <= 1) return null;
 
+  const maxVisible = isMobile ? 2 : 5;
   const pageNumbers = [];
-  const maxVisible = 5;
 
   let start = Math.max(1, currentPage - Math.floor(maxVisible / 2));
   const end = Math.min(totalPages, start + maxVisible - 1);
